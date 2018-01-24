@@ -1,0 +1,1 @@
+document.getElementsByClassName("_1mf _1mj").innerHTML='nothing';
