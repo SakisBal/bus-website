@@ -12,6 +12,65 @@ function goToDiadromes(){
    if(document.getElementById('diadromes-apo-pros')!=null){
      document.getElementById('diadromes-apo-pros').innerHTML=createOptions('first-page');
    }
+
+
+
+
+   /*
+   ----------------------
+    ||| STRING AREA |||
+   ----------------------
+   */
+
+   ekptwseiesStrCom = "<div class='row'><div class='col-lg-12'>\
+     <h3 style='padding:40px 60px;margin-top:7px;border-bottom:1px dashed #33B5B5'>Γενικές εκπτώσεις εισιτηρίων </h3>\
+     </div></div><div class='row'><div class='col-lg-12'><h3 style='padding:40px 60px;'> Προσφορές- εκπτώσεις της ΚΤΕΛ Τρικάλων</h3>\
+     </div></div>";
+
+   ekptwseiesStrPho = "<div class='row' style='margin-top:10%;'><div class='col-lg-12 text-center'>\
+     <h3 style='padding:20px 60px;margin-top:60px;border-bottom:1px dashed #33B5B5;font-size:22px;'>Γενικές εκπτώσεις εισιτηρίων </h3>\
+     </div></div><div class='row'><div class='col-lg-12'>\
+     <h3 style='padding:20px 60px;font-size:22px;'> Προσφορές- εκπτώσεις της ΚΤΕΛ Τρικάλων</h3></div></div>";
+
+   selectStrFp = '<div class="row"><div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center apo">\
+     <h1 class="apo-main">ΑΠΟ:</h1><div class="select select-apo" ><select id="select1">';
+
+   selectStrEndFp = '</select></div></div>';
+
+   select2StrFp = '<div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center pros"  style="margin-top:100px;">\
+     <h1 class="pros-main">ΠΡΟΣ:</h1><div class="select select-pros"><select id="select2">';
+
+   select2StrEndFp = '</select></div></div><button onclick="goToDiadromes();" style="border:1px solid black;margin-left:370px;" type="submit" class="btn btn-large">sumbit</button><p id="warning"></p>';
+
+   selectStrEndSp = '</select></div></div>';
+
+   select2StrSp = '<div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-cente pros"  style="margin-top:-80px;margin-bottom:50px;">\
+    <h1 style="margin-left:170px;font-size:18px;color:#212121">ΠΡΟΣ</h1><div class="select" ><select id="select2">';
+
+   select2StrEndSp = '</select></div></div><button onclick="goToDiadromes();"style="position:absolute;margin:100px;margin-left:330px;border:1px solid #333333;" type="submit" class="btn btn-large">sumbit</button><p id="warning"></p>';
+
+   selectStrPp = '<div class="row"><div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center apo" style="margin-top:60px;">\
+    <h1 style="margin-left:0px;margin-top:80px;margin-bottom:20px;font-size:18px;color:#212121;">ΑΠΟ</h1>\
+    <div class="select" style="margin-left:-0px;"><select id="select1" ><optgroup>';
+
+   selectStrEndPp = '</select></optgroup></div></div>';
+
+   select2StrStrPp = '<div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6  text-center"  style="margin-top:-80px;margin-bottom:50px;">\
+     <h1 style="margin-left:0px;margin-top:120px;margin-bottom:20px;font-size:18px;color:#212121;">ΠΡΟΣ</h1>\
+     <div class="select" style="margin-left:0px;" ><select id="select2"><optgroup>';
+
+   select2StrEndPp = '</select></optgroup></div></div><button onclick="goToDiadromes();"style=";border:1px solid #333333;margin:0 auto;" type="submit" class="btn btn-large ">sumbit</button><p id="warning"></p>';
+
+
+
+
+
+
+
+
+
+
+
  //FUNCTION AREA <---------------------------> :D
    function showHisContent(x){
      var option=document.getElementsByClassName('active-p')[0].innerHTML;
@@ -31,7 +90,7 @@ function goToDiadromes(){
          document.getElementsByClassName('tab-content')[0].innerHTML='yphresies';
        }
        else{
-         document.getElementsByClassName('tab-content')[0].innerHTML="<div class='row'><div class='col-lg-12'><h3 style='padding:40px 60px;margin-top:7px;border-bottom:1px dashed #33B5B5'>Γενικές εκπτώσεις εισιτηρίων </h3></div></div><div class='row'><div class='col-lg-12'><h3 style='padding:40px 60px;'> Προσφορές- εκπτώσεις της ΚΤΕΛ Τρικάλων</h3></div></div>";
+         document.getElementsByClassName('tab-content')[0].innerHTML= ekptwseiesStrCom;
        }
      }
       else{
@@ -45,7 +104,7 @@ function goToDiadromes(){
           document.getElementsByClassName('tab-content')[0].innerHTML='yphresies';
         }
         else{
-          document.getElementsByClassName('tab-content')[0].innerHTML="<div class='row' style='margin-top:10%;'><div class='col-lg-12 text-center'><h3 style='padding:20px 60px;margin-top:60px;border-bottom:1px dashed #33B5B5;font-size:22px;'>Γενικές εκπτώσεις εισιτηρίων </h3></div></div><div class='row'><div class='col-lg-12'><h3 style='padding:20px 60px;font-size:22px;'> Προσφορές- εκπτώσεις της ΚΤΕΛ Τρικάλων</h3></div></div>";
+          document.getElementsByClassName('tab-content')[0].innerHTML=ekptwseiesStrPho;
         }
       }
    }                                                    /*   ektpwseis   <div class='row'>
@@ -68,32 +127,36 @@ function goToDiadromes(){
     if(CurrentlySelected==4){
       CurrentlySelected=0;
     }
-    jQuery('.tab-'+CurrentlySelected).addClass('active');
-    jQuery('.tab-'+CurrentlySelected).find('p').addClass('active-p');
-    jQuery('.tab-'+CurrentlySelected).attr('id','active-tab');
+    jQuery('.tab-'+CurrentlySelected).addClass('active').attr('id','active-tab').find('p').addClass('active-p');;
     jQuery('.tabs').css('width','0px');
     jQuery('.tabs p').css('display','none');
-    if(CurrentlySelected==1){
-      jQuery('#active-tab p').css('margin-left','36%');
-      jQuery('#active-tab').css('margin-left','0%');
+
+    var activeTabPMargin = '36%';
+    var activeTabMargin = '0%';
+
+    if(CurrentlySelected == 2){
+      activeTabMargin = '-1.1%';
     }
-    if(CurrentlySelected==2){
-      jQuery('#active-tab p').css('margin-left','36%');
-      jQuery('#active-tab').css('margin-left','-1.1%');
+    else if(CurrentlySelected == 3){
+      activeTabMargin = '-0.4%';
     }
-    if(CurrentlySelected==3){
-      jQuery('#active-tab p').css('margin-left','36%');
-      jQuery('#active-tab').css('margin-left','-0.4%');
+    else if(CurrentlySelected == 0){
+      activeTabPMargin = '30%';
+      activeTabMargin = '0.5%';
     }
-    if(CurrentlySelected==0){
-      jQuery('#active-tab p').css('margin-left','30%');
-      jQuery('#active-tab').css('margin-left','0.5%');
-    }
-    jQuery('#active-tab').css('width','80%');
-    jQuery('#active-tab').css('position','absolute');
-    jQuery('#active-tab').css('margin-left','8.6%');
-    jQuery('#active-tab p').css('display','block');
-    jQuery('#active-tab p').css('position','absolute');
+
+    jQuery('#active-tab').css({
+      'margin-left' : activeTabMargin ,
+      'width' : '80%',
+      'position' : 'absolute',
+    });
+
+    jQuery('#active-tab p').css({
+      'margin-left' : activeTabPMargin,
+      'display' : 'block',
+      'position' : 'absolute'
+    });
+
   }
 
 
@@ -131,8 +194,8 @@ function goToDiadromes(){
        array1 = str.filter(function(x){
           return x!="";
        });
-       select='<div class="row"><div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center apo" style="margin-top:100px;"><h1 class="apo-main">ΑΠΟ:</h1><div class="select select-apo"  style="margin-left:70px;" ><select id="select1">';
-       select2='<div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center pros"  style="margin-top:100px;"><h1 class="pros-main">ΠΡΟΣ:</h1><div class="select select-pros"><select id="select2">';
+       select=selectStrFp;
+       select2=select2StrFp;
        for(i = 1 ; i < array1.length ; i++){
          select+='<option value="'+array1[i]+'">'+array1[i]+'</option>';
          if(i==1){
@@ -142,9 +205,8 @@ function goToDiadromes(){
              select2+='<option value="'+array1[i]+'">'+array1[i]+'</option>';
          }
        }
-       select+='</select></div></div>';
-       select2+='</select></div></div><button onclick="goToDiadromes();" style="border:1px solid black;margin-left:370px;" type="submit" class="btn btn-large">sumbit</button><p id="warning"></p>';
-
+       select+=selectStrEndFp;
+       select2+=select2StrEndFp;
        return select+select2+'</div>';
      }
      else if(main=='second-page'){
@@ -154,9 +216,8 @@ function goToDiadromes(){
        array1 = str.filter(function(x){
           return x!="";
        });
-       select='<div class="row"><div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center apo" style="margin-top:-80px;"><h1 style="margin-left:-150px;;font-size:18px;color:#212121;">ΑΠΟ</h1><div class="select" style="margin-left:0px;"><select id="select1" >';
-       select2='<div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-cente pros"  style="margin-top:-80px;margin-bottom:50px;"><h1 style="margin-left:170px;font-size:18px;color:#212121">ΠΡΟΣ</h1><div class="select" ><select id="select2">';
-       for(i = 1 ; i < array1.length ; i++){
+       select=selectStrSp;
+       select2=select2StrSp;
          select+='<option value="'+array1[i]+'">'+array1[i]+'</option>';
          if(i==1){
           select2+='<option value="'+array1[i]+'">'+array1[i]+'</option>';
@@ -164,9 +225,9 @@ function goToDiadromes(){
          else{
              select2+='<option value="'+array1[i]+'">'+array1[i]+'</option>';
          }
-       }
-       select+='</select></div></div>';
-       select2+='</select></div></div><button onclick="goToDiadromes();"style="position:absolute;margin:100px;margin-left:330px;border:1px solid #333333;" type="submit" class="btn btn-large">sumbit</button><p id="warning"></p>';
+       
+       select+=selectStrEndSp;
+       select2+=select2StrEndSp;
 
        return select+select2+'</div>';
      }
@@ -177,8 +238,8 @@ function goToDiadromes(){
        array1 = str.filter(function(x){
           return x!="";
        });
-       select='<div class="row"><div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center apo" style="margin-top:60px;"><h1 style="margin-left:0px;margin-top:80px;margin-bottom:20px;font-size:18px;color:#212121;">ΑΠΟ</h1><div class="select" style="margin-left:-0px;"><select id="select1" ><optgroup>';
-       select2='<div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6  text-center"  style="margin-top:-80px;margin-bottom:50px;"><h1 style="margin-left:0px;margin-top:120px;margin-bottom:20px;font-size:18px;color:#212121;">ΠΡΟΣ</h1><div class="select" style="margin-left:0px;" ><select id="select2"><optgroup>';
+       select=selectStrPp;
+       select2=select2StrStrPp;
        for(i = 1 ; i < array1.length ; i++){
          select+='<option value="'+array1[i]+'" >'+array1[i]+'</option>';
          if(i==1){
@@ -188,8 +249,8 @@ function goToDiadromes(){
              select2+='<option value="'+array1[i]+'">'+array1[i]+'</option>';
          }
        }
-       select+='</select></optgroup></div></div>';
-       select2+='</select></optgroup></div></div><button onclick="goToDiadromes();"style=";border:1px solid #333333;margin:0 auto;" type="submit" class="btn btn-large ">sumbit</button><p id="warning"></p>';
+       select+= selectStrEndPp;
+       select2+= select2StrEndPp;
 
        return select+select2+'</div>';
      }
@@ -334,4 +395,6 @@ function goToDiadromes(){
           showHisContent();
         }
     });
+
+
 });
