@@ -8,62 +8,78 @@ function goToDiadromes(){
     window.location.replace('localhost/wp-folder/wordpress/διαδρομεσ?from='+yourSelect1+'&'+'to='+yourSelect2 );
   }
 }
+
+/*
+----------------------
+ ||| STRING AREA |||
+----------------------
+*/
+
+ekptwseiesStrCom = "<div class='row'><div class='col-lg-12'>\
+  <h3 style='padding:40px 60px;margin-top:7px;border-bottom:1px dashed #33B5B5'>Γενικές εκπτώσεις εισιτηρίων </h3>\
+  </div></div><div class='row'><div class='col-lg-12'><h3 style='padding:40px 60px;'> Προσφορές- εκπτώσεις της ΚΤΕΛ Τρικάλων</h3>\
+  </div></div>";
+
+ekptwseiesStrPho = "<div class='row'><div class='col-lg-12 text-center'>\
+  <h3 style='padding:40px 60px;margin-top:60px;border-bottom:1px dashed #33B5B5;font-size:22px;'>Γενικές εκπτώσεις εισιτηρίων </h3>\
+  </div></div><div class='row'><div class='col-lg-12 text-center'>\
+  <h3 style='padding:40px 60px;font-size:22px;'> Προσφορές- εκπτώσεις της ΚΤΕΛ Τρικάλων</h3></div></div>";
+
+selectStrFp = '<div class="row"><div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center apo">\
+  <h1 class="apo-main">ΑΠΟ:</h1><div class="select select-apo" ><select id="select1">';
+
+selectStrEndFp = '</select></div></div>';
+
+select2StrFp = '<div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center pros"  style="margin-top:100px;">\
+  <h1 class="pros-main">ΠΡΟΣ:</h1><div class="select select-pros"><select id="select2">';
+
+select2StrEndFp = '</select></div></div><button onclick="goToDiadromes();" style="border:1px solid black;margin-left:370px;" type="submit" class="btn btn-large">sumbit</button><p id="warning"></p>';
+
+selectStrEndSp = '</select></div></div>';
+
+select2StrSp = '<div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-cente pros"  style="margin-top:-80px;margin-bottom:50px;">\
+ <h1 style="margin-left:170px;font-size:18px;color:#212121">ΠΡΟΣ</h1><div class="select" ><select id="select2">';
+
+select2StrEndSp = '</select></div></div><button onclick="goToDiadromes();"style="position:absolute;margin:100px;margin-left:330px;border:1px solid #333333;" type="submit" class="btn btn-large">sumbit</button><p id="warning"></p>';
+
+selectStrPp = '<div class="row"><div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center apo" >\
+ <h1>ΑΠΟ</h1>\
+ <div class="select" style="margin-left:-0px;"><select id="select1" >';
+
+selectStrEndPp = '</select></div></div>';
+
+select2StrStrPp = '<div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6  text-center"  style="margin-top:-80px;margin-bottom:50px;">\
+  <h1 style="margin-left:0px;margin-top:120px;margin-bottom:20px;font-size:18px;color:#212121;">ΠΡΟΣ</h1>\
+  <div class="select" style="margin-left:0px;" ><select id="select2">';
+
+select2StrEndPp = '</select></div></div><button onclick="goToDiadromes();"style=";border:1px solid #333333;margin:0 auto;" type="submit" class="btn btn-large ">sumbit</button><p id="warning"></p>';
+
+
+
+ mobilePix = 1000;
  jQuery(document).ready(function(){
    if(document.getElementById('diadromes-apo-pros')!=null){
      document.getElementById('diadromes-apo-pros').innerHTML=createOptions('first-page');
    }
+   console.log(jQuery(window).width());
 
+   if (jQuery(window).width() < mobilePix){
 
-
-
-   /*
-   ----------------------
-    ||| STRING AREA |||
-   ----------------------
-   */
-
-
-
-
-   ekptwseiesStrCom = "<div class='row'><div class='col-lg-12'>\
-     <h3 style='padding:40px 60px;margin-top:7px;border-bottom:1px dashed #33B5B5'>Γενικές εκπτώσεις εισιτηρίων </h3>\
-     </div></div><div class='row'><div class='col-lg-12'><h3 style='padding:40px 60px;'> Προσφορές- εκπτώσεις της ΚΤΕΛ Τρικάλων</h3>\
-     </div></div>";
-
-   ekptwseiesStrPho = "<div class='row'><div class='col-lg-12 text-center'>\
-     <h3 style='padding:40px 60px;margin-top:60px;border-bottom:1px dashed #33B5B5;font-size:22px;'>Γενικές εκπτώσεις εισιτηρίων </h3>\
-     </div></div><div class='row'><div class='col-lg-12 text-center'>\
-     <h3 style='padding:40px 60px;font-size:22px;'> Προσφορές- εκπτώσεις της ΚΤΕΛ Τρικάλων</h3></div></div>";
-
-   selectStrFp = '<div class="row"><div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center apo">\
-     <h1 class="apo-main">ΑΠΟ:</h1><div class="select select-apo" ><select id="select1">';
-
-   selectStrEndFp = '</select></div></div>';
-
-   select2StrFp = '<div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center pros"  style="margin-top:100px;">\
-     <h1 class="pros-main">ΠΡΟΣ:</h1><div class="select select-pros"><select id="select2">';
-
-   select2StrEndFp = '</select></div></div><button onclick="goToDiadromes();" style="border:1px solid black;margin-left:370px;" type="submit" class="btn btn-large">sumbit</button><p id="warning"></p>';
-
-   selectStrEndSp = '</select></div></div>';
-
-   select2StrSp = '<div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-cente pros"  style="margin-top:-80px;margin-bottom:50px;">\
-    <h1 style="margin-left:170px;font-size:18px;color:#212121">ΠΡΟΣ</h1><div class="select" ><select id="select2">';
-
-   select2StrEndSp = '</select></div></div><button onclick="goToDiadromes();"style="position:absolute;margin:100px;margin-left:330px;border:1px solid #333333;" type="submit" class="btn btn-large">sumbit</button><p id="warning"></p>';
-
-   selectStrPp = '<div class="row"><div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center apo" >\
-    <h1>ΑΠΟ</h1>\
-    <div class="select" style="margin-left:-0px;"><select id="select1" >';
-
-   selectStrEndPp = '</select></div></div>';
-
-   select2StrStrPp = '<div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6  text-center"  style="margin-top:-80px;margin-bottom:50px;">\
-     <h1 style="margin-left:0px;margin-top:120px;margin-bottom:20px;font-size:18px;color:#212121;">ΠΡΟΣ</h1>\
-     <div class="select" style="margin-left:0px;" ><select id="select2">';
-
-   select2StrEndPp = '</select></div></div><button onclick="goToDiadromes();"style=";border:1px solid #333333;margin:0 auto;" type="submit" class="btn btn-large ">sumbit</button><p id="warning"></p>';
-
+     jQuery('.fa').removeClass('fa-5x');
+     jQuery('.fa').addClass('fa-3x');
+     jQuery('.find-us').css({
+       'height':'120px',
+     });
+     jQuery('.fa').css({
+       'margin-top':'-100px',
+       'padding-top':'-50px'
+     });
+     jQuery('.find-us div').css({
+       'margin-top':'50px'
+     });
+     jQuery('.single-thumbnail').removeClass('container');
+     jQuery('.single-thumbnail').addClass('container-fluid');
+   }
 
 
 
@@ -81,7 +97,7 @@ function goToDiadromes(){
    function showHisContent(x){
      var option=document.getElementsByClassName('active-p')[0].innerHTML;
      device='computer';
-     if(jQuery(window).width()<600){
+     if(jQuery(window).width()<mobilePix){
        device='phone';
      }
      console.log(device);
@@ -131,7 +147,7 @@ function goToDiadromes(){
     jQuery('#active-tab').css({
       'margin-left' : '8.6%' ,
       'width' : '80%',
-      'position' : 'absolute',
+      'position' : 'absolute'
     });
     if (CurrentlySelected != 0){
       jQuery('#active-tab p').css({
@@ -148,7 +164,7 @@ function goToDiadromes(){
 
 
 
-  if(jQuery('.blog-height').css('height') !== undefined){
+  if(jQuery('.blog-height').css('height') != undefined ){
      elementHeight=jQuery('.blog-height').css('height');  //getting the clear elementHeight number
      for(i=0;i<=elementHeight.length;i++){
        if(elementHeight[i]=='p'){
@@ -365,7 +381,7 @@ function goToDiadromes(){
    jQuery('.sixthNew').hover(fadeInOut2('sixthNew'));
 
    jQuery('.tabs').click(function(){
-     if(jQuery(window).width()>600){
+     if(jQuery(window).width()>mobilePix){
        console.log('working good');
           jQuery('.main-content').find('.active').find('p').removeClass('active-p');
           jQuery('.main-content').find('.active').removeClass('active');

@@ -12,7 +12,7 @@
  </div>
 </div>
   <footer>
-    <div class='container-fluid' style='height:250px;background-color:#FAFAFA;margin-top:-15px;'>
+    <div class='container-fluid' style='height:280px;background-color:#FAFAFA;margin-top:-15px;'>
       <div class='row' >
         <div class='col-lg-4 col-xs-4 col-sm-4 col-md-4 footer-content '  style='border-right:1px solid #929292;height:250px;'>
             <?php  if (function_exists(clean_custom_menus_2())) {clean_custom_menus_2();} ?>
@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <div class='container-fluid' style='height:120px;background-color:#BABABA;'>
+    <div class='container-fluid last-el' style='background-color:#BABABA;'>
     </div>
   </footer>
   <?php
