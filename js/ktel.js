@@ -22,15 +22,18 @@ function goToDiadromes(){
    ----------------------
    */
 
+
+
+
    ekptwseiesStrCom = "<div class='row'><div class='col-lg-12'>\
      <h3 style='padding:40px 60px;margin-top:7px;border-bottom:1px dashed #33B5B5'>Γενικές εκπτώσεις εισιτηρίων </h3>\
      </div></div><div class='row'><div class='col-lg-12'><h3 style='padding:40px 60px;'> Προσφορές- εκπτώσεις της ΚΤΕΛ Τρικάλων</h3>\
      </div></div>";
 
-   ekptwseiesStrPho = "<div class='row' style='margin-top:10%;'><div class='col-lg-12 text-center'>\
-     <h3 style='padding:20px 60px;margin-top:60px;border-bottom:1px dashed #33B5B5;font-size:22px;'>Γενικές εκπτώσεις εισιτηρίων </h3>\
-     </div></div><div class='row'><div class='col-lg-12'>\
-     <h3 style='padding:20px 60px;font-size:22px;'> Προσφορές- εκπτώσεις της ΚΤΕΛ Τρικάλων</h3></div></div>";
+   ekptwseiesStrPho = "<div class='row'><div class='col-lg-12 text-center'>\
+     <h3 style='padding:40px 60px;margin-top:60px;border-bottom:1px dashed #33B5B5;font-size:22px;'>Γενικές εκπτώσεις εισιτηρίων </h3>\
+     </div></div><div class='row'><div class='col-lg-12 text-center'>\
+     <h3 style='padding:40px 60px;font-size:22px;'> Προσφορές- εκπτώσεις της ΚΤΕΛ Τρικάλων</h3></div></div>";
 
    selectStrFp = '<div class="row"><div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center apo">\
      <h1 class="apo-main">ΑΠΟ:</h1><div class="select select-apo" ><select id="select1">';
@@ -49,29 +52,32 @@ function goToDiadromes(){
 
    select2StrEndSp = '</select></div></div><button onclick="goToDiadromes();"style="position:absolute;margin:100px;margin-left:330px;border:1px solid #333333;" type="submit" class="btn btn-large">sumbit</button><p id="warning"></p>';
 
-   selectStrPp = '<div class="row"><div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center apo" style="margin-top:60px;">\
-    <h1 style="margin-left:0px;margin-top:80px;margin-bottom:20px;font-size:18px;color:#212121;">ΑΠΟ</h1>\
-    <div class="select" style="margin-left:-0px;"><select id="select1" ><optgroup>';
+   selectStrPp = '<div class="row"><div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center apo" >\
+    <h1>ΑΠΟ</h1>\
+    <div class="select" style="margin-left:-0px;"><select id="select1" >';
 
-   selectStrEndPp = '</select></optgroup></div></div>';
+   selectStrEndPp = '</select></div></div>';
 
    select2StrStrPp = '<div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6  text-center"  style="margin-top:-80px;margin-bottom:50px;">\
      <h1 style="margin-left:0px;margin-top:120px;margin-bottom:20px;font-size:18px;color:#212121;">ΠΡΟΣ</h1>\
-     <div class="select" style="margin-left:0px;" ><select id="select2"><optgroup>';
+     <div class="select" style="margin-left:0px;" ><select id="select2">';
 
-   select2StrEndPp = '</select></optgroup></div></div><button onclick="goToDiadromes();"style=";border:1px solid #333333;margin:0 auto;" type="submit" class="btn btn-large ">sumbit</button><p id="warning"></p>';
-
-
+   select2StrEndPp = '</select></div></div><button onclick="goToDiadromes();"style=";border:1px solid #333333;margin:0 auto;" type="submit" class="btn btn-large ">sumbit</button><p id="warning"></p>';
 
 
 
 
 
 
+   /*
+   -----------------------
+    ||| Functions Area|||
+   -----------------------
+   */
 
 
 
- //FUNCTION AREA <---------------------------> :D
+
    function showHisContent(x){
      var option=document.getElementsByClassName('active-p')[0].innerHTML;
      device='computer';
@@ -107,17 +113,7 @@ function goToDiadromes(){
           document.getElementsByClassName('tab-content')[0].innerHTML=ekptwseiesStrPho;
         }
       }
-   }                                                    /*   ektpwseis   <div class='row'>
-                                                                   <div class='col-lg-12'>
-                                                                     <h3 style='padding:40px 60px;margin-top:7px;border-bottom:1px dashed #33B5B5'> Γενικές εκπτώσεις εισιτηρίων </h3>
-                                                                   </div>
-                                                                 </div>
-                                                                 <div class='row'>
-                                                                   <div class='col-lg-12'>
-                                                                     <h3 style='padding:40px 60px;'> Προσφορές- εκπτώσεις της ΚΤΕΛ Τρικάλων</h3>
-                                                                   </div>
-                                                                 </div>
-  ;*/
+   }
 
   CurrentlySelected=1;
 
@@ -131,38 +127,29 @@ function goToDiadromes(){
     jQuery('.tabs').css('width','0px');
     jQuery('.tabs p').css('display','none');
 
-    var activeTabPMargin = '36%';
-    var activeTabMargin = '0%';
-
-    if(CurrentlySelected == 2){
-      activeTabMargin = '-1.1%';
-    }
-    else if(CurrentlySelected == 3){
-      activeTabMargin = '-0.4%';
-    }
-    else if(CurrentlySelected == 0){
-      activeTabPMargin = '30%';
-      activeTabMargin = '0.5%';
-    }
 
     jQuery('#active-tab').css({
-      'margin-left' : activeTabMargin ,
+      'margin-left' : '8.6%' ,
       'width' : '80%',
       'position' : 'absolute',
     });
-
-    jQuery('#active-tab p').css({
-      'margin-left' : activeTabPMargin,
-      'display' : 'block',
-      'position' : 'absolute'
-    });
-
+    if (CurrentlySelected != 0){
+      jQuery('#active-tab p').css({
+        'display' : 'block',
+      }).addClass('text-center');
+    }
+    else{
+      jQuery('#active-tab p').css({
+        'display' : 'block',
+        'margin-left':'33.5%'
+      });
+    }
   }
 
 
 
-  if(jQuery('.blog-height').css('height')!=undefined){
-     elementHeight=jQuery('.blog-height').css('height');
+  if(jQuery('.blog-height').css('height') !== undefined){
+     elementHeight=jQuery('.blog-height').css('height');  //getting the clear elementHeight number
      for(i=0;i<=elementHeight.length;i++){
        if(elementHeight[i]=='p'){
          number=i;
@@ -173,7 +160,7 @@ function goToDiadromes(){
 
 
 
-   jQuery(window).scroll(function(){
+   jQuery(window).scroll(function(){        //for the ads to be fixed
      scroll = jQuery(window).scrollTop();
      if(scroll>=470 && scroll<elementHeight-400){
        jQuery('.ads').first().css('margin-top',''+scroll-460+'px');
@@ -225,7 +212,7 @@ function goToDiadromes(){
          else{
              select2+='<option value="'+array1[i]+'">'+array1[i]+'</option>';
          }
-       
+
        select+=selectStrEndSp;
        select2+=select2StrEndSp;
 

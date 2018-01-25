@@ -60,11 +60,11 @@ function clean_custom_menus_2() {
    $menu = wp_get_nav_menu_object($locations[$menu_name]);
    $menu_items = wp_get_nav_menu_items($menu->term_id);
 
-   $menu_list = "\t\t\t\t". '<p style="text-align:center;"><b>Εταιρια μας </b></p>';
+   $menu_list = "\t\t\t\t". '<p  class="text-center"><b >Εταιρια μας </b></p>';
    foreach ((array) $menu_items as $key => $menu_item) {
      $title = $menu_item->title;
      $url = $menu_item->url;
-     $menu_list .= "\t\t\t\t\t". '<p style="padding-top:0px;text-align:center;"><a style="margin-top:0px;" class="nav-link" href="'. $url .'" style="font-size:16px;">'. $title .'</a></p>' ."\n";
+     $menu_list .= "\t\t\t\t\t". '<p><a  class="nav-link text-center" href="'. $url .'" style="font-size:16px;line-height:5px;">'. $title .'</a></p>' ."\n";
    }
 
  } else {
@@ -79,11 +79,11 @@ function clean_custom_menus_3() {
    $menu = wp_get_nav_menu_object($locations[$menu_name]);
    $menu_items = wp_get_nav_menu_items($menu->term_id);
 
-   $menu_list = "\t\t\t\t". '<p style="text-align:center;"><b>ΛΟΙΠΕΣ ΥΠΗΡΕΣΙΕΣ </b></p>';
+   $menu_list = "\t\t\t\t". '<p  class="text-center"><b>ΛΟΙΠΕΣ ΥΠΗΡΕΣΙΕΣ </b></p>';
    foreach ((array) $menu_items as $key => $menu_item) {
      $title = $menu_item->title;
      $url = $menu_item->url;
-     $menu_list .= "\t\t\t\t\t". '<p style="padding-top:0px;text-align:center;"><a class="nav-link" href="'. $url .'" style="font-size:16px;">'. $title .'</a></p>' ."\n";
+     $menu_list .= "\t\t\t\t\t". '<p ><a class="nav-link text-center" href="'. $url .'" style="font-size:16px;line-height:5px;">'. $title .'</a></p>' ."\n";
    }
 
  } else {
@@ -116,11 +116,11 @@ function clean_custom_menus_epikeinwneia() {
    $menu = wp_get_nav_menu_object($locations[$menu_name]);
    $menu_items = wp_get_nav_menu_items($menu->term_id);
 
-   $menu_list = "\t\t\t\t". '<p style="text-align:center;"><b>ΕΠΙΚΕΙΝΩΝΕΙΑ </b></p>';
+   $menu_list = "\t\t\t\t". '<p class="text-center"><b>ΕΠΙΚΕΙΝΩΝΕΙΑ </b></p>';
    foreach ((array) $menu_items as $key => $menu_item) {
      $title = $menu_item->title;
      $url = $menu_item->url;
-     $menu_list .= "\t\t\t\t\t". '<p style="padding-top:0px;text-align:center;"><a class="nav-link" href="'. $url .'" style="font-size:16px;">'. $title .'</a></p>' ."\n";
+     $menu_list .= "\t\t\t\t\t". '<p ><a class="nav-link text-center" href="'. $url .'" style="font-size:16px;line-height:5px;">'. $title .'</a></p>' ."\n";
    }
 
  } else {
