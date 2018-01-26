@@ -65,7 +65,10 @@ margin-top: -60px;
   background-repeat: no-repeat;
   background-size: cover;
   height:300px;
-  width:80%;
+  width:90%;
+}
+#single-thumb{
+  width:90%;
 }
 .info-text{
   font-size:20px;
@@ -179,6 +182,14 @@ margin-top: -60px;
   color:#118585;
   margin-top:50px;
 }
+.apo {
+  margin-top:80px;
+    margin-left:-40px;
+}
+.pros{
+  margin-left:30px;
+  margin-top:80px;
+}
 .gm i{
     transition: 0.5s;
   color:#118585;
@@ -245,7 +256,6 @@ margin-top: -60px;
 .dromologia {
   height:1360px;
   background-color:#3E94EC;
-  border-bottom: 2px solid #212121;
   border-left:1px solid #212121;
 }
 .dromologia h1 {
@@ -262,37 +272,55 @@ margin-top: -60px;
   text-align:center;
   margin-bottom:60px;
 }
+.ekptwseis-table {
+  width:70%;
+  margin-left: 120px;
+  font-size: 15px;
+  margin-bottom:60px;
+}
 .dromologia-table tr:first-child{
   display:none;
   margin:2px;
 }
-.dromologia tr td{
+.dromologia-table tr td{
   border-bottom: 1px solid #DEDEDE;
   background-color:#FFFFFF;
   padding-top:3px;
   padding-bottom: 3px;
 }
 
-.dromologia tr:nth-child(2) td{
+.dromologia-table tr:nth-child(2) td{
   font-size:15px;
   margin: 2px;
   padding:15px;
   background-color:#1B1E24;
   color:#DEDEDE;
 }
-.dromologia tr:nth-child(2n+3) td{
+.ekptwseis-table tr:nth-child(1) td{
+  margin: 2px;
+  padding:15px;
+  background-color:#1B1E24;
+  color:#DEDEDE;
+}
+.ekptwseis-table tr td{
+  margin: 2px;
+  padding:15px;
+}
+.ekptwseis-table tr:nth-child(2n+3) td{
   background-color:#DFDFDF;
 }
-.dromologia tr:nth-child(2) td:first-child{
+.dromologia-table tr:nth-child(2n+3) td{
+  background-color:#DFDFDF;
+}
+.dromologia-table tr:nth-child(2) td:first-child{
   border-top-left-radius: 10%;
 }
-.dromologia tr:nth-child(2) td:last-child{
+.dromologia-table tr:nth-child(2) td:last-child{
   border-top-right-radius: 10%;
 }
 
 .more-dromologia {
   height:200px;
-  margin:0 auto;
 
 }
 .firstNew{
@@ -791,7 +819,7 @@ margin-top: -60px;
   */
   .single-thumbnail {
     height:180px;
-    width:100%;
+    width:70%;
   }
   .dromologia h1 {
     font-size: 23px;
@@ -813,4 +841,61 @@ margin-top: -60px;
     border-top:1px solid #323232;
     clear:both;
   }
+  #single-thumb{
+    width:100%;
+  }
+  .casual-post h1 b {
+    font-size:22px;
+  }
+  .blog-height strong {
+    font-size: 22px;
+    margin-bottom:20px;
+  }
+  .blog-height p strong {
+    font-size: 16px;
+    margin-bottom:20px;
+  }
+  .blog-height h1 {
+    font-size: 22px;
+    margin-bottom:20px;
+  }
+  .blog-height h2 {
+    font-size: 22px;
+    margin-bottom:20px;
+  }
+  .blog-height p {
+    font-size:14px;
+  }
+  .blog-height p em{
+    font-size:14px;
+  }
+  .blog-height .col-lg-9 {
+    margin-left:-20px;
+  }
+
+
+  /*
+   --------------------------
+     diadromes casual posts
+   --------------------------
+  */
+  .apo-mobile {
+    margin-top:-140px;
+  }
+  .apo-mobile h1{
+    color:black;
+    margin-left: -185px;
+    padding-top:25px;
+    font-size:15px;
+  }
+  .apo-mobile select{
+
+  }
+  .pros-mobile{
+    margin-top:-125px;
+  }
+  .pros-mobile select {
+
+  }
+
 }

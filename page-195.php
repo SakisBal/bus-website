@@ -6,11 +6,13 @@
 
  use PhpOffice\PhpSpreadsheet\IOFactory;
  $inputFileType = 'Xlsx';
- $inputFileName = __DIR__ . '/demata/demata_times.xlsx';
+ $inputFileName = __DIR__ . '/ekptwseis/ekptwseis.xlsx';
  // Create a new Reader of the type defined in $inputFileType
 
  $spreadsheet = IOFactory::load($inputFileName);
  $sheetData = $spreadsheet->getActiveSheet()->toArray(null, true, true, true);
+ $title = 'ΕΚΤΠΩΣΕΙΣ';
+
 
 
  ?>
@@ -41,10 +43,10 @@
              <div class='row'>
                <div class='col-lg-3'>
                </div>
-               <div class='col-lg-9' style='margin-top:20px;margin-bottom:200px;'>
-                 <p><?php the_content(); ?></p>
+               <div class='col-lg-9' style='margin-top:20px;'>
+                 <p style="font-size:22px;"><b><?php echo $title; ?></b></p>
                  <?php
-                 $theTable='<table class="dromologia-table" style="width:100%;padding:;margin:30px 0px 30px 0px;">';
+                 $theTable='<table class="ekptwseis-table" style="width:100%;padding:;margin:30px 0px 30px 0px;">';
                  foreach($sheetData as $data){
 
                    $theTable.='<tr>';
@@ -64,7 +66,7 @@
                    <?php  if (function_exists(clean_custom_menus_diadromes())) {clean_custom_menus_diadromes();} ?>
                  </div>
                  <div class='more-dromologia col-lg-11' style="margin-top:0px;">
-                   <h3 style='text-align:center;margin-top:10px;color:#212121;font-size:20px;padding-bottom:10px;'> Θελετε να διαλεξετε καποιο <a href="http://localhost/wp-folder/wordpress/δρομολογια/">δρομολογιο</a>? </h3>
+                   <h3 style='text-align:center;margin-top:10px;color:#212121;font-size:20px;padding-bottom:10px;'> Θελετε να διαλεξετε αλλη <a href="http://localhost/wp-folder/wordpress/δρομολογια/">δρομολογιο</a>? </h3>
                  </div>
 
               </div>
@@ -76,9 +78,9 @@
 
       //   previous_posts_link('newer posts');//gives you the newer posts
        }
-       $j=0;
-
        ?>
+     </div>
+   </div>
      </div>
    </div>
  </div>

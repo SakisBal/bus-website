@@ -96,9 +96,7 @@
                    <?php  if (function_exists(clean_custom_menus_diadromes())) {clean_custom_menus_diadromes();} ?>
                  </div>
                  <div class='more-dromologia col-lg-11' style="margin-top:0px;">
-                   <h3 style='text-align:center;margin-top:10px;color:#212121;font-size:20px;padding-bottom:10px;'> Θελετε να διαλεξετε αλλη διαδρομη? </h3>
-                   <div id="diadromes-apo-pros">
-                   </div>
+                   <h3 style='text-align:center;margin-top:10px;color:#212121;font-size:20px;padding-bottom:10px;'> Θελετε να διαλεξετε αλλη <a href="http://localhost/wp-folder/wordpress/δρομολογια/">δρομολογιο</a>? </h3>
                  </div>
 
               </div>

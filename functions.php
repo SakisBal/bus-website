@@ -110,6 +110,29 @@ function clean_custom_menus_diadromes() {
  }
 }
 
+function clean_custom_menus_diadromes_oles() {
+ $menu_name = 'diadromes'; // specify custom menu slug
+ if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
+   $items=array();
+   $menu = wp_get_nav_menu_object($locations[$menu_name]);
+   $menu_items = wp_get_nav_menu_items($menu->term_id);
+   foreach ((array) $menu_items as $key => $menu_item) {
+     $title = $menu_item->title;
+     array_push($items,$title);
+   }
+
+ } else {
+   // $menu_list = '<!-- no list defined -->';
+ }
+ for($i=0;$i<sizeof($items);$i++){ //localhost/wp-folder/wordpress/διαδρομεσ?from='+yourSelect1+'&'+'to='+yourSelect2
+   if($items[$i]!='ΤΡΙΚΑΛΑ'){
+    print_r('<a href="localhost/wp-folder/wordpress/διαδρομεσ?from=ΤΡΙΚΑΛΑ&to='.$items[$i].'">'.$items[$i].'</a>');
+   }
+ }
+}
+
+
+
 function clean_custom_menus_epikeinwneia() {
  $menu_name = 'epikeinwneia'; // specify custom menu slug
  if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {

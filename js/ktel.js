@@ -15,9 +15,10 @@ function goToDiadromes(){
 ----------------------
 */
 
+
 ekptwseiesStrCom = "<div class='row'><div class='col-lg-12'>\
-  <h3 style='padding:40px 60px;margin-top:7px;border-bottom:1px dashed #33B5B5'>Γενικές εκπτώσεις εισιτηρίων </h3>\
-  </div></div><div class='row'><div class='col-lg-12'><h3 style='padding:40px 60px;'> Προσφορές- εκπτώσεις της ΚΤΕΛ Τρικάλων</h3>\
+  <h3 style='padding:40px 60px;margin-top:7px;border-bottom:1px dashed #33B5B5'><a href='http://localhost/wp-folder/wordpress/εκπτωσεισ-εισητηριων/'>Γενικές εκπτώσεις εισιτηρίων</a></h3>\
+  </div></div><div class='row'><div class='col-lg-12'><h3 style='padding:40px 60px;'><a href='http://localhost/wp-folder/wordpress/ktel-ekpt/'>Προσφορές- εκπτώσεις της ΚΤΕΛ Τρικάλων</a></h3>\
   </div></div>";
 
 ekptwseiesStrPho = "<div class='row'><div class='col-lg-12 text-center'>\
@@ -25,15 +26,24 @@ ekptwseiesStrPho = "<div class='row'><div class='col-lg-12 text-center'>\
   </div></div><div class='row'><div class='col-lg-12 text-center'>\
   <h3 style='padding:40px 60px;font-size:22px;'> Προσφορές- εκπτώσεις της ΚΤΕΛ Τρικάλων</h3></div></div>";
 
-selectStrFp = '<div class="row"><div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center apo">\
+
+
+
+
+selectStrStrFp = '<div class="row"><div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center apo">\
   <h1 class="apo-main">ΑΠΟ:</h1><div class="select select-apo" ><select id="select1">';
 
 selectStrEndFp = '</select></div></div>';
 
-select2StrFp = '<div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center pros"  style="margin-top:100px;">\
+select2StrStrFp = '<div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center pros"  >\
   <h1 class="pros-main">ΠΡΟΣ:</h1><div class="select select-pros"><select id="select2">';
 
 select2StrEndFp = '</select></div></div><button onclick="goToDiadromes();" style="border:1px solid black;margin-left:370px;" type="submit" class="btn btn-large">sumbit</button><p id="warning"></p>';
+
+
+
+selectStrSp = '<div class="row"><div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center apo">\
+  <h1 class="apo-main">ΑΠΟ:</h1><div class="select select-apo" ><select id="select1">';
 
 selectStrEndSp = '</select></div></div>';
 
@@ -41,6 +51,8 @@ select2StrSp = '<div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-cente pros
  <h1 style="margin-left:170px;font-size:18px;color:#212121">ΠΡΟΣ</h1><div class="select" ><select id="select2">';
 
 select2StrEndSp = '</select></div></div><button onclick="goToDiadromes();"style="position:absolute;margin:100px;margin-left:330px;border:1px solid #333333;" type="submit" class="btn btn-large">sumbit</button><p id="warning"></p>';
+
+
 
 selectStrPp = '<div class="row"><div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center apo" >\
  <h1>ΑΠΟ</h1>\
@@ -56,11 +68,44 @@ select2StrEndPp = '</select></div></div><button onclick="goToDiadromes();"style=
 
 
 
+selectStrCmm = '<div class="row"><div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center apo-mobile" >\
+ <h1>ΑΠΟ</h1>\
+ <div class="select"><select id="select1" >';
+
+select2StrCmm = '<div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center pros-mobile"  >\
+ <h1 >ΠΡΟΣ</h1><div class="select" ><select id="select2">';
+
+selectStrEndCmm = '</select></div></div>';
+
+select2StrEndCmm = '</select></div></div><button onclick="goToDiadromes();"style=";border:1px solid #333333;margin:0 auto;margin-top:30px;margin-left:110px;" type="submit" class="btn btn-sm ">sumbit</button><p id="warning"></p>';
+
  mobilePix = 1000;
  jQuery(document).ready(function(){
    if(document.getElementById('diadromes-apo-pros')!=null){
-     document.getElementById('diadromes-apo-pros').innerHTML=createOptions('first-page');
+     if(jQuery(window).width()>mobilePix){
+       document.getElementsByClassName('tab-content')[0].innerHTML=createOptions('first-page');
+       document.getElementById('diadromes-apo-pros').innerHTML=createOptions('first-page');
+     }
+     else{
+       document.getElementById('diadromes-apo-pros').innerHTML=createOptions('casual-menu-mobile');
+       document.getElementsByClassName('tab-content')[0].innerHTML=createOptions('phone');
+     }
    }
+
+
+   if(jQuery(window).width()>mobilePix){
+     document.getElementsByClassName('tab-content')[0].innerHTML=ekptwseiesStrCom;
+   }
+   else{
+     document.getElementsByClassName('tab-content')[0].innerHTML=createOptions('phone');
+   }
+
+   var size = [window.width,window.height];  //disable resize
+
+   $(window).resize(function(){
+    window.resizeTo(size[0],size[1]);
+   });
+
    console.log(jQuery(window).width());
 
    if (jQuery(window).width() < mobilePix){
@@ -179,10 +224,10 @@ select2StrEndPp = '</select></div></div><button onclick="goToDiadromes();"style=
    jQuery(window).scroll(function(){        //for the ads to be fixed
      scroll = jQuery(window).scrollTop();
      if(scroll>=470 && scroll<elementHeight-400){
-       jQuery('.ads').first().css('margin-top',''+scroll-460+'px');
+       jQuery('.ads-pc').first().css('margin-top',''+scroll-460+'px');
      }
      else if( scroll>=elementHeight-100 && elementHeight>700){
-       jQuery('.ads').first().css('margin-top',''+elementHeight-920+'px');
+       jQuery('.ads-pc').first().css('margin-top',''+elementHeight-920+'px');
      }
    });
 
@@ -197,8 +242,8 @@ select2StrEndPp = '</select></div></div><button onclick="goToDiadromes();"style=
        array1 = str.filter(function(x){
           return x!="";
        });
-       select=selectStrFp;
-       select2=select2StrFp;
+       select=selectStrStrFp;
+       select2=select2StrStrFp;
        for(i = 1 ; i < array1.length ; i++){
          select+='<option value="'+array1[i]+'">'+array1[i]+'</option>';
          if(i==1){
@@ -234,7 +279,7 @@ select2StrEndPp = '</select></div></div><button onclick="goToDiadromes();"style=
 
        return select+select2+'</div>';
      }
-     else {
+     else if(main=='phone'){
        var str = document.getElementById('invinsible-diadromes').innerHTML;
        var array1 = [];
        str = str.split(' ');
@@ -254,6 +299,30 @@ select2StrEndPp = '</select></div></div><button onclick="goToDiadromes();"style=
        }
        select+= selectStrEndPp;
        select2+= select2StrEndPp;
+
+       return select+select2+'</div>';
+     }
+     else if(main == 'casual-menu-mobile'){
+       console.log('you are in casual menu mobile');
+       var str = document.getElementById('invinsible-diadromes').innerHTML;
+       var array1 = [];
+       str = str.split(' ');
+       array1 = str.filter(function(x){
+          return x!="";
+       });
+       select=selectStrCmm;
+       select2=select2StrCmm;
+       for(i = 1 ; i < array1.length ; i++){
+         select+='<option value="'+array1[i]+'" >'+array1[i]+'</option>';
+         if(i==1){
+          select2+='<option value="'+array1[i]+'" >'+array1[i]+'</option>';
+        }
+         else{
+             select2+='<option value="'+array1[i]+'">'+array1[i]+'</option>';
+         }
+       }
+       select+= selectStrEndCmm;
+       select2+= select2StrEndCmm;
 
        return select+select2+'</div>';
      }
